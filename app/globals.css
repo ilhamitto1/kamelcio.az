@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 93, 64, 55;
+  --background-start-rgb: 255, 248, 225;
+  --background-end-rgb: 255, 236, 179;
+  
+  --background: 39 38% 95%;
+  --foreground: 20 30% 23%;
+  
+  --card: 39 38% 95%;
+  --card-foreground: 20 30% 23%;
+  
+  --popover: 39 38% 95%;
+  --popover-foreground: 20 30% 23%;
+  
+  --primary: 25 76% 26%;
+  --primary-foreground: 39 38% 95%;
+  
+  --secondary: 30 67% 94%;
+  --secondary-foreground: 25 76% 26%;
+  
+  --muted: 30 67% 94%;
+  --muted-foreground: 20 14% 40%;
+  
+  --accent: 43 74% 66%;
+  --accent-foreground: 20 30% 23%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 39 38% 95%;
+  
+  --border: 20 14% 80%;
+  --input: 20 14% 80%;
+  --ring: 43 74% 66%;
+  
+  --radius: 0.5rem;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+  }
+  
+  .hero-content {
+    @apply z-10 text-center px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-chocolate-dark;
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-medium mb-4 text-chocolate-medium;
+  }
+  
+  .product-card {
+    @apply bg-cream rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+  
+  .btn-primary {
+    @apply bg-chocolate-dark text-cream hover:bg-chocolate-medium transition-colors duration-300 py-2 px-6 rounded-full font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-gold text-chocolate-dark hover:bg-gold-light transition-colors duration-300 py-2 px-6 rounded-full font-medium;
+  }
+  
+  .input-field {
+    @apply w-full p-3 border border-chocolate-light rounded-md focus:outline-none focus:ring-2 focus:ring-gold bg-cream;
+  }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
